@@ -1,0 +1,10 @@
+pyrogram==1.4.16
+py-tgcalls 
+TgCrypto
+requests
+asyncio
+pymongo
+dnspython
+telethon
+speedtest-cli
+wget
