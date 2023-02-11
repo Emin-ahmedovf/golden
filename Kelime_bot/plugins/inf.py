@@ -44,27 +44,29 @@ async def botstats(bot: Client, message: Message):
 
 @Client.on_message(filters.command("start"))
 async def start(event):
-  if event.is_private:
-    async for usr in client.iter_participants(event.chat_id):
-     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await client.send_message(-1001510168247, f"ℹ️ **Yeni Kullanıcı -** {ad}")
-     return await event.reply(f"**Merhaba \nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
-                      [
-                       Button.inline("Komutlar", data="komutlar")
-                      ],
-                      [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
-                      ],
-                      [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
-                      ],
-                    ),
-                    link_preview=False)
+    if event.is_private:
+      async for usr in client.iter_participants(event.chat_id):
+       ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
+       await client.send_message(-1001510168247, f"ℹ️ **Yeni Kullanıcı -** {ad}")
+       return await event.reply(f"**Merhaba \nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
+                        [
+                         Button.inline("Komutlar", data="komutlar")
+                        ],
+                        [
+                         Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
+                         Button.url('Kanal', 'https://t.me/StarBotKanal')
+                        ],
+                        [
+                         Button.url('Sahibim', 'https://t.me/Hayiboo')
+                        ],
+                      ),
+                      link_preview=False)
 
 
-  if event.is_group:
-    return await client.send_message(event.chat_id, f"**Beni Grubuna Aldığın için Teşekkürler ✨**")
+    if event.is_group:
+        return await client.send_message(
+            event.chat_id, "**Beni Grubuna Aldığın için Teşekkürler ✨**"
+        )
 
 
 

@@ -3,8 +3,7 @@ from pyrogram import Client, filters
 
 @Client.on_message(filters.command('id'))
 def ids(_, message):
-    reply = message.reply_to_message
-    if reply:
+    if reply := message.reply_to_message:
         message.reply_text(
             f"**Your ID**: `{message.from_user.id}`\n**{reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**Chat ID**: `{message.chat.id}`"
         )

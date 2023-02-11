@@ -14,7 +14,7 @@ datam=mydatam["soz"]
 async def ratingsa(c:Client, m:Message):
     for us in datam.find():
         try:
-            if not us["tür"]=="kanal":
+            if us["tür"] != "kanal":
                 datam.update_one(us,{"$set":{"puan":"0"}})
         except:
             datam.update_one(us,{"$set":{"puan":"0"}})

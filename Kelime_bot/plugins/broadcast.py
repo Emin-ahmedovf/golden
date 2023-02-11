@@ -16,7 +16,7 @@ async def kelimeoyun(c:Client, m:Message):
     tpm2=0
     for us in datam.find():
         try:
-            if not us["tür"]=="kanal":
+            if us["tür"] != "kanal":
                 rr=m.reply_to_message
                 try:
                     await c.send_message(int(us["_id"]),rr["text"])

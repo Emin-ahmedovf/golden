@@ -31,34 +31,30 @@ async def kelimeoyun(c:Client, m:Message):
     except:
         aktif = False
 
-    if aktif:
-        pass
-    else:
+    if not aktif:
         try:
             datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
         except:
             pass
         await m.reply(f"**{m.from_user.mention}** Tərəfindən Söz Oyunu Başladı .\n\n🥳 Xoş Oyunlar....", reply_markup=kanal)
-        
-        oyun[m.chat.id] = {"kelime":kelime_sec()}
-        oyun[m.chat.id]["aktif"] = True
-        oyun[m.chat.id]["round"] = 1
-        oyun[m.chat.id]["pass"] = 0
-        oyun[m.chat.id]["oyuncular"] = {}
-        
-        kelime_list = ""
+
+        oyun[m.chat.id] = {
+            "kelime": kelime_sec(),
+            "aktif": True,
+            "round": 1,
+            "pass": 0,
+            "oyuncular": {},
+        }
         kelime = list(oyun[m.chat.id]['kelime'])
         shuffle(kelime)
-        
-        for harf in kelime:
-            kelime_list+= harf + " "
-        
+
+        kelime_list = "".join(f"{harf} " for harf in kelime)
         text = f"""
 🎯 Raund : {oyun[m.chat.id]['round']}/30 
 📝 Söz :   <code>{kelime_list}</code>
 💰 Qazandiracağı Xal : 40
 🔎 İpucu : 1. {oyun[m.chat.id]["kelime"][0]}
-✍🏻 Uzunluq : {int(len(kelime_list)/2)} 
+✍🏻 Uzunluq : {len(kelime_list) // 2} 
 
 ✏️ Qarişiq Hərflərdən Düzgün Sözü tap 🥳 
         """
