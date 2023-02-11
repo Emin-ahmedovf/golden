@@ -1,4 +1,4 @@
-from kelime_bot import OWNER_ID
+from Kelime_bot import OWNER_ID
 from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message

@@ -2,10 +2,10 @@ from pyrogram import Client
 from pyrogram import filters
 from random import shuffle
 from pyrogram.types import Message
-from kelime_bot import rating
-from kelime_bot.helpers.keyboards import *
-from kelime_bot.helpers.kelimeler import kelime_sec
-from kelime_bot import *
+from Kelime_bot import rating
+from Kelime_bot.helpers.keyboards import *
+from Kelime_bot.helpers.kelimeler import kelime_sec
+from Kelime_bot import *
 import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']

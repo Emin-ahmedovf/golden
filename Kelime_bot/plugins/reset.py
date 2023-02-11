@@ -1,6 +1,6 @@
 from pyrogram import Client
 from pyrogram import filters
-from kelime_bot import OWNER_ID
+from Kelime_bot import OWNER_ID
 from pyrogram.types import Message
 import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)

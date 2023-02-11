@@ -1,7 +1,7 @@
 import asyncio
 import speedtest
 from pyrogram import filters
-from kelime_bot import OWNER_ID
+from Kelime_bot import OWNER_ID
 from pyrogram import Client, filters
 # Commands
 
