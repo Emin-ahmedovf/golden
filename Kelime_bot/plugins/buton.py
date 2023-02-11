@@ -12,30 +12,38 @@ mydatam=mydb["data1"]
 datam=mydatam["soz"]
 keyboard = InlineKeyboardMarkup([
     [
-        InlineKeyboardButton("➕ Məni Qrupa Əlavə Et ➕", url=f"http://t.me/Goldenoyunbot?startgroup=new")
+        InlineKeyboardButton(
+            "➕ Məni Qrupa Əlavə Et ➕",
+            url="http://t.me/Goldenoyunbot?startgroup=new",
+        )
     ],
     [
         InlineKeyboardButton("🇦🇿  Bot Sahibi ", url="t.me/emin_orjinal"),
-        InlineKeyboardButton("🔎 Əmrlər", callback_data ="eme")
+        InlineKeyboardButton("🔎 Əmrlər", callback_data="eme"),
     ],
     [
-        InlineKeyboardButton("✨ Yeniliklər ✨", url=f"https://t.me/goldenbotresmi")
-    ]
+        InlineKeyboardButton(
+            "✨ Yeniliklər ✨", url="https://t.me/goldenbotresmi")
+    ],
 ])
 
 
 DOCS_MESSAGE = "• **Salam** 📖\n\n• **Mən Söz Oyun Botuyam** 🎮 \n\n• **Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən** ✍🏻 \n\n• **Oynamaq üçün məni bir qrupa əlavə edib yönetici etmək lazimdir** . 💭"
 DOCS_BUTTONS = [
-      [
-            InlineKeyboardButton("➕ Məni Qrupa Əlavə Et ➕", url=f"http://t.me/Goldenoyunbot?startgroup=new")
+    [
+        InlineKeyboardButton(
+            "➕ Məni Qrupa Əlavə Et ➕",
+            url="http://t.me/Goldenoyunbot?startgroup=new",
+        )
     ],
     [
         InlineKeyboardButton("🇦🇿  Bot Sahibi ", url="t.me/emin_orjinal"),
-        InlineKeyboardButton("🔎 Əmrlər", callback_data ="eme")
+        InlineKeyboardButton("🔎 Əmrlər", callback_data="eme"),
     ],
     [
-        InlineKeyboardButton("✨ Yeniliklər ✨", url=f"https://t.me/goldenbotresmi")
-    ]
+        InlineKeyboardButton(
+            "✨ Yeniliklər ✨", url="https://t.me/goldenbotresmi")
+    ],
 ]           
 
 
@@ -64,15 +72,14 @@ def callback_query(client, CallbackQuery):
 
 @Client.on_message(filters.regex('eme'))
 def ids(_, message):
-    reply = message.reply_to_message
-    if reply:
-        message.reply_text(
-            f"**Your ID**: `{message.from_user.id}`\n**{reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**Chat ID**: `{message.chat.id}`"
-        )
-    else:
-        message.reply(
-            f"**Your id**: `{message.from_user.id}`\n**chat id**: `{message.chat.id}`"
-        )
+     if reply := message.reply_to_message:
+          message.reply_text(
+              f"**Your ID**: `{message.from_user.id}`\n**{reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**Chat ID**: `{message.chat.id}`"
+          )
+     else:
+          message.reply(
+              f"**Your id**: `{message.from_user.id}`\n**chat id**: `{message.chat.id}`"
+          )
 
 
 
