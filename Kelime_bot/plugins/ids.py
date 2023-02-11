@@ -1,4 +1,4 @@
-from Kelime_bot import app
+from Kelime_bot import bot
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command('id'))
