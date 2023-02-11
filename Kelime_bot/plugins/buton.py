@@ -14,7 +14,7 @@ keyboard = InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
             "➕ Məni Qrupa Əlavə Et ➕",
-            url="http://t.me/Goldenoyunbot?startgroup=new",
+            url="http://t.me/Goldensozbot?startgroup=new",
         )
     ],
     [
@@ -33,7 +33,7 @@ DOCS_BUTTONS = [
     [
         InlineKeyboardButton(
             "➕ Məni Qrupa Əlavə Et ➕",
-            url="http://t.me/Goldenoyunbot?startgroup=new",
+            url="http://t.me/Goldensozbot?startgroup=new",
         )
     ],
     [
@@ -54,7 +54,7 @@ def callback_query(client, CallbackQuery):
 
          PAGE1_BUTTON = [
                [
-                     InlineKeyboardButton("↩️ Geri Qayıt", callback_data="GO TO MENU"),
+                     InlineKeyboardButton("↩️ Geri Qayıt", callback_data="geer"),
                ]
          ]
 
@@ -63,26 +63,11 @@ def callback_query(client, CallbackQuery):
              reply_markup = InlineKeyboardMarkup (PAGE1_BUTTON)
          )         
 
-     elif CallbackQuery.data == "GO TO MENU":
+     elif CallbackQuery.data == "geer":
          CallbackQuery.edit_message_text( 
              DOCS_MESSAGE, 
              reply_markup = InlineKeyboardMarkup(DOCS_BUTTONS)
          ) 
-
-
-@Client.on_message(filters.regex('eme'))
-def ids(_, message):
-     if reply := message.reply_to_message:
-          message.reply_text(
-              f"**Your ID**: `{message.from_user.id}`\n**{reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**Chat ID**: `{message.chat.id}`"
-          )
-     else:
-          message.reply(
-              f"**Your id**: `{message.from_user.id}`\n**chat id**: `{message.chat.id}`"
-          )
-
-
-
 
 START = """
 • **Salam** 📖\n\n• **Mən Söz Oyun Botuyam** 🎮 \n\n• **Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən** ✍🏻 \n\n• **Oynamaq üçün məni bir qrupa əlavə edib yönetici etmək lazimdir** . 💭
