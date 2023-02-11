@@ -15,7 +15,7 @@ BOT_USERNAME = "sozitapbot"
 async def hg(bot: Client, msg: Message):
          try:
             datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
-        except:
+         except:
             pass
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
