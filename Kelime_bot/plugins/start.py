@@ -11,7 +11,7 @@ dns.resolver.default_resolver.nameservers=['8.8.8.8']
 import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["soz"]
+datam=mydatam["user"]
 
 @Client.on_message(filters.command("sgame") & ~filters.private & ~filters.channel & ~filters.edited)
 async def kelimeoyun(c:Client, m:Message):
@@ -33,7 +33,7 @@ async def kelimeoyun(c:Client, m:Message):
 
     if not aktif:
         try:
-            datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
+            datam.insert_one({"_id":m.chat.id,"id":"user"})
         except:
             pass
         await m.reply(f"**{m.from_user.mention}** Tərəfindən Söz Oyunu Başladı .\n\n🥳 Xoş Oyunlar....", reply_markup=kanal)
