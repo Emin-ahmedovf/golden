@@ -9,7 +9,7 @@ dns.resolver.default_resolver.nameservers=['8.8.8.8']
 import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["soz"]
+datam=mydatam["user"]
 keyboard = InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
@@ -101,6 +101,6 @@ PRIVATE /start MESSAGE
 async def priv_start(c:Client, m:Message):
     await c.send_message(m.chat.id, START, reply_markup=keyboard)
     try:
-        datam.insert_one({"_id":m.chat.id,"puan":"0"})
+        datam.insert_one({"_id":m.chat.id,"user":"id"})
     except:
         pass
