@@ -33,7 +33,7 @@ async def hg(bot: Client, msg: Message):
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
             try:
                 datam.insert_one({"_id":m.chat.id,"emin":"emka"})
-            except:
+             except:
                 pass
 
 @Client.on_message(filters.command("info"))
