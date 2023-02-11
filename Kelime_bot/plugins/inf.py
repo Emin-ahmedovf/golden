@@ -13,6 +13,10 @@ BOT_USERNAME = "sozitapbot"
 
 @Client.on_message(filters.new_chat_members, group=1)
 async def hg(bot: Client, msg: Message):
+         try:
+            datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
+        except:
+            pass
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
             await msg.reply(
