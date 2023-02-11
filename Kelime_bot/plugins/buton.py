@@ -19,7 +19,7 @@ keyboard = InlineKeyboardMarkup([
     ],
     [
         InlineKeyboardButton("🇦🇿  Bot Sahibi ", url="t.me/emin_orjinal"),
-        InlineKeyboardButton("🔎 Əmrlər", callback_data="eme"),
+        InlineKeyboardButton("🔎 Əmrlər", callback_data="emr"),
     ],
     [
         InlineKeyboardButton(
@@ -49,7 +49,7 @@ DOCS_BUTTONS = [
 
 @Client.on_callback_query()
 def callback_query(client, CallbackQuery): 
-     if CallbackQuery.data == "START READING":
+     if CallbackQuery.data == "emr":
          PAGE1_TEXT = "**Bot Əmrləri Haqqinda** \n\n/game - Yeni oyun başladar\n\n/stop - Oyunu Dayandırar\n\n/rating - Qlobal İstifadəçi Sıralamasini Göstərər\n\n/kec - Bilmədiyiniz Sözü keçər"
 
          PAGE1_BUTTON = [
