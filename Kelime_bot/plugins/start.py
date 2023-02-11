@@ -33,7 +33,7 @@ async def kelimeoyun(c:Client, m:Message):
 
     if not aktif:
         try:
-            datam.insert_one({"_id":m.chat.id,"id":"user"})
+            datam.insert_one({"_id":m.chat.id,"tür":"user"})
         except:
             pass
         await m.reply(f"**{m.from_user.mention}** Tərəfindən Söz Oyunu Başladı .\n\n🥳 Xoş Oyunlar....", reply_markup=kanal)
