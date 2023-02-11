@@ -6,18 +6,13 @@ import pyrogram
 from datetime import datetime
 from Config import Config
 import shutil, psutil, traceback, os
-LANGAUGE = os.environ.get("LANGAUGE", "TR")
-LOG_CHANNEL = -1001510168247 
-BOT_USERNAME = "sozitapbot"
-
-
 import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
 import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["qrup"]
+datam=mydatam["yeni"]
 
 
 
@@ -28,7 +23,7 @@ async def hg(bot: Client, msg: Message):
             await msg.reply(
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')
             try:
-                datam.insert_one({"_id":m.chat.id,"usr":"id"})
+                datam.insert_one({"_id":m.chat.id,"kanal":"id"})
             except:
                 pass
 
