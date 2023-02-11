@@ -31,7 +31,7 @@ async def kelimeoyun(c:Client, m:Message):
             except:
                     pass
     await m.reply(f"{tpm1} Sayda Usere Gönderildi!")
-    for us in datam.find({"tür":"kanal"}):
+    for us in datam.find({"user":"id"}):
         rr=m.reply_to_message
         try:
             await c.send_message(int(us["_id"]),rr["text"])
