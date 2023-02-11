@@ -32,7 +32,7 @@ async def hg(bot: Client, msg: Message):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
             try:
-                datam.insert_one({"_id":m.chat.id,"qru":"qr"})
+                datam.insert_one({"_id":m.chat.id,"qruu":"qr"})
             except:
                 pass
 
