@@ -22,11 +22,7 @@ datam=mydatam["soz"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
-async def hg(bot: Client, msg: Message):
-         try:
-            datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
-         except:
-            pass
+async def hg(bot: Client, msg: Message):         
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
             await msg.reply(
@@ -35,6 +31,10 @@ async def hg(bot: Client, msg: Message):
         elif str(new_user.id) == str(Config.OWNER_ID):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
+            try:
+                datam.insert_one({"_id":m.chat.id,"tür":"kanal"})
+             except:
+                pass
 
 @Client.on_message(filters.command("info"))
 async def _id(_, message: Message):
