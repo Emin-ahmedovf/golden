@@ -9,24 +9,6 @@ mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?
 mydatam=mydb["data1"]
 datam=mydatam["soz"]
 
-@Client.on_message(filters.command("myrating"))
-async def myratingsa(c:Client, m:Message):
-    sy=0
-    metin = """**🏆 Qlobal üzrə Ən yaxşı 20 oyunçu \n**"""
-    eklenen = 0
-    l=[]
-    for i in datam.find():
-        try:
-            if i["tür"] != "kanal":
-                l.append(i)
-        except:
-            if int(i["puan"]) != 0:
-                l.append(i)
-    l.sort(reverse = True,key=lambda x: int(x["puan"]))
-    for i in l[:20]:
-        kisi=i["men"]
-        puan=i["puan"]
-
 @Client.on_message(filters.command("rating"))
 async def ratingsa(c:Client, m:Message):
     metin = """**🏆 Qlobal üzrə Ən yaxşı 20 oyunçu \n**"""
