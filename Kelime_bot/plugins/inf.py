@@ -17,7 +17,7 @@ dns.resolver.default_resolver.nameservers=['8.8.8.8']
 import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["qruu"]
+datam=mydatam["emin"]
 
 
 
@@ -32,7 +32,7 @@ async def hg(bot: Client, msg: Message):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
             try:
-                datam.insert_one({"_id":m.chat.id,"qruu":"qr"})
+                datam.insert_one({"_id":m.chat.id,"emin":"emka"})
             except:
                 pass
 
