@@ -18,7 +18,7 @@ datam=mydatam["emin"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
-            try:
+             try:
                 datam.insert_one({"_id":m.chat.id,"emin":"id"})
             except:
                 pass
