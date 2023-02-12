@@ -18,15 +18,16 @@ datam=mydatam["emin"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
+            try:
+                datam.insert_one({"_id":m.chat.id,"emin":"id"})
+            except:
+                pass
 async def hg(bot: Client, msg: Message):         
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
             await msg.reply(
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')
-            try:
-                datam.insert_one({"_id":m.chat.id,"emin":"id"})
-            except:
-                pass
+
         elif str(new_user.id) == str(Config.OWNER_ID):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
