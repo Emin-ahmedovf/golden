@@ -18,11 +18,11 @@ datam=mydatam["emin"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
-             try:
+async def hg(bot: Client, msg: Message):
+            try:
                 datam.insert_one({"_id":m.chat.id,"emin":"id"})
             except:
-                pass
-async def hg(bot: Client, msg: Message):         
+                pass       
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
             await msg.reply(
