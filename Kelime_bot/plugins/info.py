@@ -14,7 +14,7 @@ dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["emin"]
+datam=mydatam["meme"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
