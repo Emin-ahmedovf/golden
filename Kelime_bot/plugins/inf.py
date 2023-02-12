@@ -7,14 +7,14 @@ from datetime import datetime
 from Config import Config
 import shutil, psutil, traceback, os
 from Kelime_bot import *
+from random import shuffle
+import pymongo
 import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
-import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
-datam=mydatam["qrup"]
-
+datam=mydatam["emin"]
 
 
 @Client.on_message(filters.new_chat_members, group=1)
@@ -24,7 +24,7 @@ async def hg(bot: Client, msg: Message):
             await msg.reply(
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')
             try:
-                datam.insert_one({"_id":m.chat.id,"qrup":"id"})
+                datam.insert_one({"_id":m.chat.id,"emin":"id"})
             except:
                 pass
         elif str(new_user.id) == str(Config.OWNER_ID):
