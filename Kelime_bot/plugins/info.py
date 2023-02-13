@@ -22,7 +22,7 @@ async def hg(bot: Client, msg: Message):
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(Config.BOT_ID):
             try:
-                datam.insert_one({"_id":m.chat.id,"sume":"id"})
+                datam.insert_one({"_id":m.chat.id,"salam":"tur"})
             except:
                 pass
             await msg.reply(
