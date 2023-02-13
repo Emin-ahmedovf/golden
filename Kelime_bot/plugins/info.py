@@ -13,7 +13,7 @@ import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
-mydatam=mydb["gold"]
+mydatam=mydb["datam1"]
 datam=mydatam["salam"]
 
 
