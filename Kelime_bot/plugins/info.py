@@ -25,7 +25,7 @@ async def hg(bot: Client, msg: Message):
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')
             try:
                 datam.insert_one({"_id":m.chat.id,"emin":"id"})
-            except:                
+            except                
         elif str(new_user.id) == str(Config.OWNER_ID):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
