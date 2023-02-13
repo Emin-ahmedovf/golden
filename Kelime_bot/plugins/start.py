@@ -32,10 +32,6 @@ async def kelimeoyun(c:Client, m:Message):
         aktif = False
 
     if not aktif:
-        try:
-            datam.insert_one({"_id":m.chat.id,"meme":"id"})
-        except:
-            pass
         await m.reply(f"**{m.from_user.mention}** Tərəfindən Söz Oyunu Başladı .\n\n🥳 Xoş Oyunlar....", reply_markup=kanal)
 
         oyun[m.chat.id] = {
