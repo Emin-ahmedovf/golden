@@ -101,8 +101,7 @@ async def hg(bot: Client, msg: Message):
     try:
         datam.insert_one({"_id":m.chat.id,"usr":"id"})
     except:
-        pass
-               
+        pass              
         elif str(new_user.id) == str(Config.OWNER_ID):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
