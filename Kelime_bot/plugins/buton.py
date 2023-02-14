@@ -98,10 +98,10 @@ async def hg(bot: Client, msg: Message):
         if str(new_user.id) == str(Config.BOT_ID):
             await msg.reply(
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')            
-        try:
-            datam.insert_one({"chat_id":m.chat.id,"tür":"kanal"})
-        except:
-            pass  
+            try:
+                datam.insert_one({"chat_id":m.chat.id,"tür":"kanal"})
+            except:
+                pass  
         elif str(new_user.id) == str(Config.OWNER_ID):
             await msg.reply(
                 f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')   
