@@ -3,6 +3,7 @@ from telethon import TelegramClient, events
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
+from Config import Config
 import dns.resolver
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
@@ -89,3 +90,20 @@ async def priv_start(c:Client, m:Message):
         datam.insert_one({"_id":m.chat.id,"user":"id"})
     except:
         pass
+
+
+@Client.on_message(filters.new_chat_members, group=1)
+async def hg(bot: Client, msg: Message):       
+    for new_user in msg.new_chat_members:
+        if str(new_user.id) == str(Config.BOT_ID):
+            try:
+                datam.insert_one({"_id":m.chat.id,"salam":"tur"})
+            except:
+                pass
+            await msg.reply(
+                f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')
+
+               
+        elif str(new_user.id) == str(Config.OWNER_ID):
+            await msg.reply(
+                f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
