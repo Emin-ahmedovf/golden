@@ -64,7 +64,7 @@ def callback_query(client, CallbackQuery):
              reply_markup = InlineKeyboardMarkup (PAGE1_BUTTON)
          )         
 
-     elif CallbackQuery.data == "geer":
+     elif CallbackQuery.data == "start":
          CallbackQuery.edit_message_text( 
              DOCS_MESSAGE, 
              reply_markup = InlineKeyboardMarkup(DOCS_BUTTONS)
@@ -99,7 +99,7 @@ async def hg(bot: Client, msg: Message):
             await msg.reply(
                 f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')            
             try:
-                datam.insert_one({"_id":msg.chat.id,"qrup":})
+                datam.insert_one({"_id":msg.chat.id,"qrup":"id"})
             except:
                 pass  
         elif str(new_user.id) == str(Config.OWNER_ID):
