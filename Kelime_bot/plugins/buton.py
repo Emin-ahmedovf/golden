@@ -39,7 +39,7 @@ DOCS_BUTTONS = [
     ],
     [
         InlineKeyboardButton("🇦🇿  Bot Sahibi ", url="t.me/emin_orjinal"),
-        InlineKeyboardButton("🔎 Əmrlər", callback_data="eme"),
+        InlineKeyboardButton("🔎 Əmrlər", callback_data="emr"),
     ],
     [
         InlineKeyboardButton(
@@ -64,7 +64,7 @@ def callback_query(client, CallbackQuery):
              reply_markup = InlineKeyboardMarkup (PAGE1_BUTTON)
          )         
 
-     elif CallbackQuery.data == "start":
+     elif CallbackQuery.data == "geer":
          CallbackQuery.edit_message_text( 
              DOCS_MESSAGE, 
              reply_markup = InlineKeyboardMarkup(DOCS_BUTTONS)
