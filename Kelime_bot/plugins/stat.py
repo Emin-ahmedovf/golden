@@ -13,7 +13,7 @@ datam=mydatam["qrup"]
 
 @Client.on_message(filters.command("stat") & filters.user(OWNER_ID))
 async def kelimeoyun(c:Client, m:Message):
-    tt = sum(1 for _ in datam.find({"qrup":"d"}))
-    kn = sum(1 for _ in datam.find({"user":"id"}))
+    tt = sum(1 for _ in datam.find())
+    kn = sum(1 for _ in datam.find({"user":"qrup"}))
     tt=tt-kn
     await m.reply(f"**〽️ Statistika:\n\nℹ️ Toplam User: {tt}\n♻️ Toplam Guruplar: {kn}**")
