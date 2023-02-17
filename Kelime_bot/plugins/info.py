@@ -14,8 +14,23 @@ dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8']
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["datam1"]
-datam=mydatam["salam"]
+datam=mydatam["qrup"]
 
+
+
+@Client.on_message(filters.new_chat_members, group=1)
+async def hg(bot: Client, msg: Message):       
+    for new_user in msg.new_chat_members:
+        if str(new_user.id) == str(Config.BOT_ID):
+            await msg.reply(
+                f'''`Hey` {msg.from_user.mention} `məni` {msg.chat.title} `qrupuna əlavə etdiyin üçün Təşəkkürlər⚡️`\n\n**Mən Söz Oyun Botuyam 🎮 • Əyləncəli vaxt Keçirmək üçün Mənimlə Oynaya bilərsən ✍🏻 ✨**''')            
+            try:
+                datam.insert_one({"_id":msg.chat.id,"qrup":"id"})
+            except:
+                pass  
+        elif str(new_user.id) == str(Config.OWNER_ID):
+            await msg.reply(
+                f'''{msg.from_user.mention} Sahibim İndicə Qrupa qoşuldu.''')
 
 
 @Client.on_message(filters.command("info"))
