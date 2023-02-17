@@ -9,7 +9,6 @@ import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
 datam=mydatam["user"]
-datam=mydatam["qrup"]
 
 @Client.on_message(filters.command("stat") & filters.user(OWNER_ID))
 async def kelimeoyun(c:Client, m:Message):
