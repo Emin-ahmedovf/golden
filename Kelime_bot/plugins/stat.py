@@ -9,11 +9,11 @@ import pymongo
 mydb=pymongo.MongoClient("mongodb+srv://emin:emin@cluster0.tsbm4n6.mongodb.net/?retryWrites=true&w=majority")
 mydatam=mydb["data1"]
 datam=mydatam["user"]
-datam=mydatam["qruo"]
+datam=mydatam["qrup"]
 
 @Client.on_message(filters.command("stat") & filters.user(OWNER_ID))
 async def kelimeoyun(c:Client, m:Message):
     tt = sum(1 for _ in datam.find())
-    kn = sum(1 for _ in datam.find({"qrup":"id"}))
+    kn = sum(1 for _ in datam.find({"qrup":"qrup"}))
     tt=tt-kn
     await m.reply(f"**〽️ Statistika:\n\nℹ️ Toplam User: {tt}\n♻️ Toplam Guruplar: {kn}**")
